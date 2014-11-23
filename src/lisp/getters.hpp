@@ -30,7 +30,7 @@ static inline bool property_get(const Lisp* lisp, T& val)
   if(lisp->get_list_size() != 2)
     return false;
   
-  const Lisp* el = lisp->get_list_elem(1);
+  const Lisp* el = lisp->get_list_elem(1).get();
   return get(el, val);
 }
 
